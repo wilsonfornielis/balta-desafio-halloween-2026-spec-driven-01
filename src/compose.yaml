@@ -1,0 +1,14 @@
+name: password-generator
+
+services:
+  api:
+    build: .
+    image: password-generator-api:latest
+    container_name: password-generator-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - passwords-data:/app/data
+
+volumes:
+  passwords-data:
